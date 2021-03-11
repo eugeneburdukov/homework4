@@ -34,7 +34,8 @@ public class Task1 {
         }
 
         System.out.println();
-        System.out.println("Транспонированна матрица:");
+
+        System.out.println("Транспонированная матрица:");
         for (int i = 0; i < newArray.length; i++) {
             for (int j = 0; j < newArray[i].length; j++) {
                 System.out.print(newArray[i][j] + " ");
