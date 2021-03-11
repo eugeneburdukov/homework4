@@ -17,7 +17,7 @@ public class Task2 {
                 {14, 15, 16},
         };
 
-        System.out.println("Изначальная матрица:");
+        System.out.println("Исходная матрица:");
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
                 System.out.print(array[i][j] + " ");
