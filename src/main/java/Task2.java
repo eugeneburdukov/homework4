@@ -1,19 +1,46 @@
 public class Task2 {
 
     public static void main(String[] args) {
+
         /*
-    Найти точки для
-			1) функции y = 2*sin(x)-4; в диапазоне [-5, 5] c шагом 0.1;
-			2) функции y = 2*tg(x)-4*sin(2*x); в диапазоне [-1, 1] c шагом 0.01;
-     */
+         Написать программу, которая должна выполнять транспонирование матрицы.
+	Транспонирование — в линейной алгебре это операция над матрицами в результате которой матрица
+	 поворачивается относительно своей главной диагонали. При этом столбцы исходной матрицы становятся
+	  строками результирующей.
+         */
 
-        // [-7, 20]
-        int min = -5;
-        int max = 5;
+        int array[][] = new int[][]{
+                {1, 2, 3},
+                {5, 6, 7},
+                {8, 9, 10},
+                {11, 12, 13},
+                {14, 15, 16},
+        };
 
-        for (int x = min; x <= max; x++) {
-            double y = 2 * Math.sin(x) - 4;
-            System.out.println("Y = " + y + "; X =" + x + ";");
+        System.out.println("Изначальная матрица:");
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                System.out.print(array[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+        int newArray[][] = new int[array[0].length][array.length];
+
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length; j++) {
+                newArray[j][i] = array[i][j];
+            }
+        }
+
+        System.out.println();
+
+        System.out.println("Транспонированная матрица:");
+        for (int i = 0; i < newArray.length; i++) {
+            for (int j = 0; j < newArray[i].length; j++) {
+                System.out.print(newArray[i][j] + " ");
+            }
+            System.out.println();
         }
     }
 }

@@ -1,46 +1,45 @@
 public class Task1 {
+    /*
+Дан произвольный массив. Необходимо получить массив всех чисел без повторений,
+которые повторяются более 2-х раз. Для решения задачи необходимо использовать
+только следующий функционал:
+* Переменные
+* Массивы
+* Условные операторы
+* Циклы.
+
+ */
 
     public static void main(String[] args) {
-
-        /*
-         Написать программу, которая должна выполнять транспонирование матрицы.
-	Транспонирование — в линейной алгебре это операция над матрицами в результате которой матрица
-	 поворачивается относительно своей главной диагонали. При этом столбцы исходной матрицы становятся
-	  строками результирующей.
-         */
-
-        int array[][] = new int[][]{
-                {1, 2, 3},
-                {5, 6, 7},
-                {8, 9, 10},
-                {11, 12, 13},
-                {14, 15, 16},
-        };
-
-        System.out.println("Изначальная матрица:");
+        // Показать значения, которые не повторяются, вывод будет: 3 6 7
+        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
         for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                System.out.print(array[i][j] + " ");
+            int count = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j] && i != j) {
+                    count++;
+                    break;
+                }
             }
-            System.out.println();
-        }
-
-        int newArray[][] = new int[array[0].length][array.length];
-
-        for (int i = 0; i < array.length; i++) {
-            for (int j = 0; j < array[i].length; j++) {
-                newArray[j][i] = array[i][j];
+            if (count == 0) {
+                System.out.print(array[i] + " ");
             }
         }
 
-        System.out.println();
+        // Показать уникальные значения, вывод будет: 1 2 3 4 5 6
+//        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6};
+//        for (int i = 0; i < array.length; i++) {
+//            boolean flag = true;
+//            for (int j = i + 1; j < array.length; j++) {
+//                if (array[i] == array[j]) {
+//                    flag = false;
+//                    break;
+//                }
+//            }
+//            if (flag) {
+//                System.out.print(array[i] + " ");
+//            }
+//        }
 
-        System.out.println("Транспонированная матрица:");
-        for (int i = 0; i < newArray.length; i++) {
-            for (int j = 0; j < newArray[i].length; j++) {
-                System.out.print(newArray[i][j] + " ");
-            }
-            System.out.println();
-        }
     }
 }
