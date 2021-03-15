@@ -9,7 +9,7 @@ public class Task2 {
 	  строками результирующей.
          */
 
-        int array[][] = new int[][]{
+        int[][] array = new int[][]{
                 {1, 2, 3},
                 {5, 6, 7},
                 {8, 9, 10},
@@ -25,7 +25,7 @@ public class Task2 {
             System.out.println();
         }
 
-        int newArray[][] = new int[array[0].length][array.length];
+        int[][] newArray = new int[array[0].length][array.length];
 
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {

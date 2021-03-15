@@ -27,7 +27,5 @@ public class Task3 {
             double y = 2 * Math.tan(x) - 4 * Math.sin(2 * x);
             System.out.println("Y = " + y + "; X =" + x + ";");
         }
-
-
     }
 }

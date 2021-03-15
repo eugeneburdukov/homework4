@@ -11,7 +11,43 @@ public class Task1 {
  */
 
     public static void main(String[] args) {
-        // Показать значения, которые не повторяются, вывод будет: 3 6 7
+
+        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
+        int[] newArray;
+        int counter = 0;
+        for (int i = 0; i < array.length; i++) {
+            int count = 0;
+            for (int j = 0; j < array.length; j++) {
+                if (array[i] == array[j] && i != j) {
+                    count++;
+                    break;
+                }
+            }
+            if (count == 0) {
+                counter++;
+//                System.out.print(array[i] + " ");
+                newArray = new int[counter];
+                for (int j = 0; j < newArray.length; j++) {
+                    newArray[j] = array[i];
+                    System.out.print(newArray[j] + " ");
+                    break;
+                }
+            }
+        }
+
+//        System.out.println(counter);
+//        newArray = new int[counter];
+//        for (int i = 0; i <; i++) {
+//
+//        }
+
+
+
+
+
+
+
+/*        // Показать значения, которые не повторяются, вывод будет: 3 6 7
         int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
         for (int i = 0; i < array.length; i++) {
             int count = 0;
@@ -24,7 +60,7 @@ public class Task1 {
             if (count == 0) {
                 System.out.print(array[i] + " ");
             }
-        }
+        }*/
 
         // Показать уникальные значения, вывод будет: 1 2 3 4 5 6
 //        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6};
