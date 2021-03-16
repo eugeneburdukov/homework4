@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Task1 {
     /*
 Дан произвольный массив. Необходимо получить массив всех чисел без повторений,
@@ -12,9 +14,9 @@ public class Task1 {
 
     public static void main(String[] args) {
 
-        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
-        int[] newArray;
-        int counter = 0;
+        int[] array = new int[]{1, 1, 2, 2, 3, 4, 5, 6, 6, 7};
+        int[] newArray = new int[array.length];
+        int newArrayLength = 0;
         for (int i = 0; i < array.length; i++) {
             int count = 0;
             for (int j = 0; j < array.length; j++) {
@@ -24,31 +26,36 @@ public class Task1 {
                 }
             }
             if (count == 0) {
-                counter++;
-//                System.out.print(array[i] + " ");
-                newArray = new int[counter];
-                for (int j = 0; j < newArray.length; j++) {
-                    newArray[j] = array[i];
-                    System.out.print(newArray[j] + " ");
+                newArray[newArrayLength] = array[i];
+                newArrayLength++;
+            }
+        }
+
+/*        // Массив с той же длиной, но с нолями
+        for (int i = 0; i < newArray.length; i++) {
+            System.out.println(newArray[i]);
+        }*/
+
+        // создание и заполнение финального массива:
+        int[] finalArray = new int[newArrayLength];
+
+        for (int i = 0; i < newArray.length; i++) {
+            for (int j = 0; j < finalArray.length; j++) {
+                if (newArray[i] != 0) {
+                    finalArray[i] = newArray[i];
                     break;
                 }
             }
         }
 
-//        System.out.println(counter);
-//        newArray = new int[counter];
-//        for (int i = 0; i <; i++) {
-//
-//        }
+        // вывод ячеек финального массива
+        for (int i = 0; i < finalArray.length; i++) {
+            System.out.print(finalArray[i] + " ");
+        }
 
-
-
-
-
-
-
-/*        // Показать значения, которые не повторяются, вывод будет: 3 6 7
-        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
+/*        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6, 7, 8, 8};
+        int[] newArray = new int[array.length];
+        int newArrayLength = 0;
         for (int i = 0; i < array.length; i++) {
             int count = 0;
             for (int j = 0; j < array.length; j++) {
@@ -58,24 +65,10 @@ public class Task1 {
                 }
             }
             if (count == 0) {
-                System.out.print(array[i] + " ");
+                newArray[newArrayLength] = array[i];
+                newArrayLength++;
             }
-        }*/
-
-        // Показать уникальные значения, вывод будет: 1 2 3 4 5 6
-//        int[] array = new int[]{1, 1, 2, 2, 3, 4, 4, 5, 5, 5, 6};
-//        for (int i = 0; i < array.length; i++) {
-//            boolean flag = true;
-//            for (int j = i + 1; j < array.length; j++) {
-//                if (array[i] == array[j]) {
-//                    flag = false;
-//                    break;
-//                }
-//            }
-//            if (flag) {
-//                System.out.print(array[i] + " ");
-//            }
-//        }
-
+        }
+        System.out.println(Arrays.toString(Arrays.copyOf(newArray, newArrayLength)));*/
     }
 }
